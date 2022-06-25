@@ -1,0 +1,48 @@
+.motivational {
+  /*font-weight: bold;*/
+  background-image: url(../../images/motivationalBG.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vw;
+}
+.title {
+  font-weight: bold;
+  color: blueviolet;
+  justify-content: center;
+  padding: 2em;
+  font-size: 16;
+}
+.ul {
+  list-style-type: none;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  display: flex;
+  font-weight: bold;
+}
+
+.takingAction {
+  background-image: url(../../images/motivationalBG.jpg);
+  background-size: cover;
+  background-position: "center";
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vw;
+}
+.ideas {
+  padding: 5em;
+  color: #6eb5ff;
+  font-weight: bold;
+  flex-direction: row;
+}
+.span {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.goalSetting {
+  display: flex;
+}
