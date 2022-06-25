@@ -9,24 +9,32 @@ function Header() {
     <nav className={styles.header}>
       <div className={styles.part1}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>
+          <li className={`${styles.listItem} ${styles.logoImage}`}>
             <Image src={logo} width="60%" height="60%" />
           </li>
-          <li className={styles.listItem}>
+          <li className={`${styles.listItem} ${styles.welcomeText}`}>
             Welcome to our Hacker&apos;s Journaling Website!
           </li>
         </ul>
       </div>
       <div className={styles.part2}>
         <ul className={styles.list2}>
-          <li className={styles.listItem2}>
+          <li>
             <Link href="/auth/login">
-              Log in
+              <button
+                className={`${styles.listItem2} ${styles.loginButton} ${styles.staticButtons}`}
+              >
+                Log in
+              </button>
             </Link>
           </li>
-          <li className={styles.listItem2}>
+          <li>
             <Link href="/auth/register">
-              Get Started
+              <button
+                className={`${styles.listItem2} ${styles.getStartedButton} ${styles.staticButtons}`}
+              >
+                Get Started
+              </button>
             </Link>
           </li>
         </ul>
