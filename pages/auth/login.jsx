@@ -1,7 +1,8 @@
-import { Button, Container, TextField, Text, Typography } from '@mui/material'
-import { Box } from '@mui/system'
-import React, { useContext, useState } from 'react'
-import { UserContext } from '../../context/UserContext'
+import { Button, Container, TextField, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import Link from 'next/link';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,9 +24,8 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             label="Email" 
             variant="filled" 
-            fullWidth="100%"
+            fullWidth
             type="email"
-            className
             value={email}
           />
         </Box>
@@ -34,7 +34,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             label="Password" 
             variant="filled"   
-            fullWidth="100%"
+            fullWidth
             type="password"
             value={password}
           />
@@ -43,7 +43,7 @@ const Login = () => {
           {loginError}
         </Typography>
         <Button
-          fullWidth="100%"
+          fullWidth
           type="submit"
           variant="contained"
         >
@@ -54,12 +54,24 @@ const Login = () => {
         <Button
           onClick={signInWithGoogle}
           color='secondary'
-          fullWidth="100%"
+          fullWidth
           type="submit"
           variant="contained"
         >
           Sign in with Google
         </Button>
+      </Box>
+      <Box my={2}>
+        <Link href="/auth/register">
+          <Button
+            color='info'
+            fullWidth
+            type="submit"
+            variant="contained"
+          >
+            Create an account
+          </Button>
+        </Link>
       </Box>
     </Container>
   )
