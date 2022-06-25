@@ -23,7 +23,14 @@ function Header() {
       </div>
       <div className={styles.part2}>
         <ul className={styles.list2}>
-          <li onClick={authSignOut} className={styles.listItem2}>Logout</li>
+          <li>
+            <button
+              onClick={authSignOut}
+              className={`${styles.listItem2} ${styles.logoutButton} ${styles.staticButtons}`}
+            >
+              Logout
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
