@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/components/Header.module.css";
 import Image from "next/image";
 import logo from "../images/logo.png";
+import Link from "next/link";
 
 function Header() {
   return (
@@ -12,14 +13,22 @@ function Header() {
             <Image src={logo} width="60%" height="60%" />
           </li>
           <li className={styles.listItem}>
-            Welcome to our Hacker's Journaling Website!
+            Welcome to our Hacker&apos;s Journaling Website!
           </li>
         </ul>
       </div>
       <div className={styles.part2}>
         <ul className={styles.list2}>
-          <li className={styles.listItem2}>Log in</li>
-          <li className={styles.listItem2}>Get started</li>
+          <li className={styles.listItem2}>
+            <Link href="/auth/login">
+              Log in
+            </Link>
+          </li>
+          <li className={styles.listItem2}>
+            <Link href="/auth/register">
+              Get Started
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
