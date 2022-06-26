@@ -6,7 +6,7 @@ import { UserContext } from "../context/UserContext";
 export default function Home() {
   const text = "Get your thoughts organized ...";
   const { user } = useContext(UserContext);
-  console.log(user);
+
   return user ? (
     <div className={styles.startPage}>
       <h1 className={styles.textTyped}>
