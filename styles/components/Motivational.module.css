@@ -1,5 +1,4 @@
-.motivational {
-  /*font-weight: bold;*/
+.bg {
   background-image: url(../../images/motivationalBG.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,10 +7,10 @@
 }
 .title {
   font-weight: bold;
-  color: blueviolet;
-  justify-content: center;
-  padding: 2em;
-  font-size: 16;
+  color: #284326;
+
+  padding: 0.3em;
+  font-size: 2em;
 }
 .ul {
   list-style-type: none;
@@ -33,16 +32,89 @@
 }
 .ideas {
   padding: 5em;
-  color: #6eb5ff;
+  color: #416955;
   font-weight: bold;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+.ideas2 {
+  padding: 1em;
+  justify-content: center;
 }
 .span {
   flex-direction: row;
   display: flex;
   justify-content: space-evenly;
 }
+.button {
+  background-color: #8bbb8e; /* Green */
+  border: none;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  align-self: center;
+}
+.button2 {
+  background-color: #8bbb8e; /* Green */
+  border: none;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  align-self: center;
+}
 
 .goalSetting {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.goal {
+  padding-top: 5em;
+  padding-bottom: 1em;
+  color: #416955;
+  font-weight: bold;
+  flex-direction: column;
+
+  align-self: center;
+}
+.textarea {
+  width: 50em;
+  border: 5em;
+  outline: invert;
+  box-shadow: 0 0 10px #719ece;
+  border-radius: 5em;
+  margin-bottom: 1em;
+  align-self: center;
+}
+
+.limitingBeliefs {
+  background-image: url(../../images/motivationalBG.jpg);
+  background-size: cover;
+  background-position: "center";
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+}
+
+.fearSetting {
+  background-image: url(../../images/motivationalBG.jpg);
+  background-size: cover;
+  background-position: "center";
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vw;
   display: flex;
 }
