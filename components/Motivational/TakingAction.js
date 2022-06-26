@@ -20,7 +20,7 @@ function TakingAction() {
       <hr />
       <div className={styles.span}>
         <div className={styles.ideas}>
-          <div class={styles.ideas2}>I am going to:</div>
+          <div className={styles.ideas2}>I am going to:</div>
           <textarea
             className={styles.textarea}
             rows="2"
@@ -84,8 +84,8 @@ function TakingAction() {
           </button>
         </div>
         <div>
-          {data.map((el) => (
-            <h3>{el}</h3>
+          {data.map((el, index) => (
+            <h3 key={index}>{el}</h3>
           ))}
         </div>
       </div>
