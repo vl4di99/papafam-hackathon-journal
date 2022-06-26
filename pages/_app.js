@@ -1,16 +1,13 @@
-import ComponentLoader from '../components/ComponentLoader';
-import { UserContextProvider } from '../context/UserContext';
-import '../styles/globals.css';
+import ComponentLoader from "../components/ComponentLoader";
+import { UserContextProvider } from "../context/UserContext";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <UserContextProvider>
-      <ComponentLoader 
-        Component={() => <Component {...pageProps} />}
-      />
+      <ComponentLoader Component={() => <Component {...pageProps} />} />
     </UserContextProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

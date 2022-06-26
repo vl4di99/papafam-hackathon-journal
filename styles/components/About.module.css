@@ -50,6 +50,7 @@
   margin-left: 2em;
   margin-right: 2em;
   margin-top: 2em;
+
 }
 .motto {
   display: flex;
@@ -62,10 +63,10 @@
 }
 
 .pictures {
-  align-self: flex-start;
+  align-self: center;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
 
 .horizontalRow {

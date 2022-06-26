@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import axios from "axios";
 import SentimentalScoreElement from "./SentimentalScoreElement";
+import styles from "../styles/components/SentimentalScore.module.css";
 
 function SentimentalScore() {
   const { user } = useContext(UserContext);
@@ -31,7 +32,7 @@ function SentimentalScore() {
 
   return (
     !loading && (
-      <div>
+      <div className={styles.wrapper}>
         {journalRecords.map((element, index) => (
           <SentimentalScoreElement
             userid={element.userid}

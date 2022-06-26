@@ -16,9 +16,7 @@ export default function Home() {
   ) : (
     <div className={styles.startPage}>
       <h1 className={styles.textTyped}>
-        <TypeWriter typing={0.5} loop>
-          {text}
-        </TypeWriter>
+        <TypeWriter typing={0.5}>{text}</TypeWriter>
       </h1>
     </div>
   );

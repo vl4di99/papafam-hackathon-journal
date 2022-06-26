@@ -1,90 +1,55 @@
 import React, { useContext } from "react";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Container,
-} from "@material-ui/core";
-import { Home, ExitToAppOutlined } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/core/styles";
+import styles from "../styles/components/Header.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import logo from "../images/logo.png";
 import { UserContext } from "../context/UserContext";
 
-const useStyles = makeStyles({
-  navbarDisplayFlex: {
-    display: `flex`,
-    justifyContent: `space-between`,
-    alignItems: `left`,
-    flexDirection: `row`,
-    padding: `0px`,
-    margin: `0px`,
-  },
-  navDisplayFlex: {
-    display: `flex`,
-    justifyContent: `space-between`,
-    alignItems: `left`,
-    flexDirection: `row`,
-    flexWrap: `wrap`,
-    width: `100%`,
-    marginTop: `10px`,
-    marginBottom: `10px`,
-  },
-  linkText: {
-    color: `pink`,
-    fontSize: `1.2rem`,
-    fontWeight: `bold`,
-    textDecoration: `none`,
-    margin: `4px`,
-    "&:hover": {
-      color: `pink`,
-      textDecoration: `underline`,
-    },
-  },
-});
-
-const navLinks = [
-  { title: `My Journal`, path: `/journal/entry` },
-  { title: `Thoughts of the day✍️`, path: `/product` },
-  { title: `Advice`, path: `/blog` },
-  { title: `Sentimental score`, path: `/score` },
-  { title: `Motivation`, path: `/motivationalQuote` },
-];
-
-const Header = () => {
-  const classes = useStyles();
+function Header() {
   const { authSignOut } = useContext(UserContext);
 
   return (
-    <AppBar
-      position="static"
-      style={{ background: "transparent", boxShadow: "none" }}
-    >
-      <Toolbar>
-        <Container maxWidth="md" className={classes.navbarDisplayFlex}>
-          <IconButton edge="start" color="inherit" aria-label="home">
-            <Home fontSize="small" />
-          </IconButton>
-          <List
-            component="nav"
-            aria-labelledby="main navigation"
-            className={classes.navDisplayFlex}
-          >
-            {navLinks.map(({ title, path }) => (
-              <a href={path} key={title} className={classes.linkText}>
-                <ListItem button>
-                  <ListItemText primary={title} />
-                </ListItem>
-              </a>
-            ))}
-          </List>
-          <IconButton edge="start" color="pink" aria-label="logout" onClick={authSignOut}>
-            <ExitToAppOutlined fontSize="small" />
-          </IconButton>
-        </Container>
-      </Toolbar>
-    </AppBar>
+    <nav className={styles.header}>
+      <div className={styles.part1}>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <Link href="/">
+              <Image
+                src={logo}
+                width="60%"
+                height="60%"
+                style={{ cursor: "pointer" }}
+              />
+            </Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/journal/entry">My Journal</Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/motivational">Motivational Page</Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/score">Sentimental score</Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/about">About 3 Column Technique</Link>
+          </li>
+        </ul>
+      </div>
+      <div className={styles.part2}>
+        <ul className={styles.list2}>
+          <li>
+            <button
+              onClick={authSignOut}
+              className={`${styles.listItem2} ${styles.logoutButton} ${styles.staticButtons}`}
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
-};
+}
+
 export default Header;

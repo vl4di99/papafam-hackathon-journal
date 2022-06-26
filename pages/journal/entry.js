@@ -2,9 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import Link from "next/link";
 import AppBar from "@material-ui/core/AppBar";
-import { Card, CardContent, Typography, Grid } from "@material-ui/core";
+import { Card, CardContent, Typography, Grid } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import Question from "../../components/Journal/Question";
+import styles from "../../styles/JournalEntry.module.css";
 
 const useStyles = makeStyles({
   typo: {
@@ -37,7 +38,7 @@ const useStyles = makeStyles({
 function Entry() {
   const classes = useStyles();
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Grid container className={classes.grid}>
         <Grid item xs={12}>
           <Card>
