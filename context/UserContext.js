@@ -1,4 +1,12 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth, provider } from "../firebase";
 
@@ -14,31 +22,31 @@ export const UserContextProvider = ({ children }) => {
   useEffect(() => {
     setIsLoading(true);
     onAuthStateChanged(auth, (user) => {
-      setUser(user)
+      setUser(user);
       setIsLoading(false);
-    })
-  }, [])
-  
+    });
+  }, []);
+
   const signIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setUser(userCredential)
+        setUser(userCredential.user);
       })
       .catch((error) => {
         setLoginError(error.message);
-      })
-  }
+      });
+  };
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((userCredential) => {
         setLoginError(null);
-        setUser(userCredential)
+        setUser(userCredential.user);
       })
       .catch((error) => {
         setLoginError(error.message);
       });
-  }
+  };
 
   const registerUser = (name, email, password, confirmPassword) => {
     if (password !== confirmPassword) {
@@ -50,19 +58,18 @@ export const UserContextProvider = ({ children }) => {
       .then((userCredential) => {
         setRegisterError(null);
         updateProfile(userCredential.user, {
-          displayName: name
-        })
-        .then(() => setUser(userCredential.user));
+          displayName: name,
+        }).then(() => setUser(userCredential.user));
       })
       .catch((error) => {
         setRegisterError(error.message);
-      })
-  }
+      });
+  };
 
   const authSignOut = () => {
     signOut(auth);
     setUser(null);
-  }
+  };
 
   const recoverAccount = (email) => {
     sendPasswordResetEmail(auth, email)
@@ -71,8 +78,8 @@ export const UserContextProvider = ({ children }) => {
       })
       .catch((error) => {
         setRecoveryError(error.message);
-      })
-  }
+      });
+  };
 
   return (
     <UserContext.Provider
@@ -86,10 +93,10 @@ export const UserContextProvider = ({ children }) => {
         registerError,
         recoverAccount,
         recoveryError,
-        isLoading
+        isLoading,
       }}
     >
       {children}
     </UserContext.Provider>
-  )
-}
+  );
+};
