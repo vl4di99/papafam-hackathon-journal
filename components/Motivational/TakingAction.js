@@ -34,7 +34,7 @@ function TakingAction() {
         </div>
 
         <div className={styles.ideas}>
-          <div class={styles.ideas2}>
+          <div className={styles.ideas2}>
             What limiting beliefs do I have to overcome to achieve this:
           </div>
           <textarea className={styles.textarea} rows="2" cols="1" />
@@ -46,7 +46,7 @@ function TakingAction() {
       <hr />{" "}
       <div className={styles.span}>
         <div className={styles.ideas}>
-          <div class={styles.ideas2}>
+          <div className={styles.ideas2}>
             What steps do I have to take to get started:
           </div>
           <textarea className={styles.textarea} rows="2" cols="1" />
@@ -56,7 +56,9 @@ function TakingAction() {
         </div>
 
         <div className={styles.ideas}>
-          <div class={styles.ideas2}>What tools do I need to get started:</div>
+          <div className={styles.ideas2}>
+            What tools do I need to get started:
+          </div>
           <textarea className={styles.textarea} rows="2" cols="1" />
           <button className={styles.button2} onClick={handleClick}>
             ➕
@@ -66,14 +68,14 @@ function TakingAction() {
       <hr />
       <div className={styles.span}>
         <div className={styles.ideas}>
-          <div class={styles.ideas2}>Why I am doing this:</div>
+          <div className={styles.ideas2}>Why I am doing this:</div>
           <textarea className={styles.textarea} rows="2" cols="1" />
           <button className={styles.button2} onClick={handleClick}>
             ➕
           </button>
         </div>
         <div className={styles.ideas}>
-          <div class={styles.ideas2}>
+          <div className={styles.ideas2}>
             How am I gonna feel when I will achieve this:
           </div>
           <textarea className={styles.textarea} rows="2" cols="1" />
