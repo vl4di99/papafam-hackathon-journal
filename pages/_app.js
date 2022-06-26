@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import ComponentLoader from '../components/ComponentLoader';
 import { UserContextProvider } from '../context/UserContext';
 import '../styles/globals.css';
 
@@ -6,8 +6,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <UserContextProvider>
-      <Header />
-      <Component {...pageProps} />
+      <ComponentLoader 
+        Component={() => <Component {...pageProps} />}
+      />
     </UserContextProvider>
   )
 }

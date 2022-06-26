@@ -8,7 +8,7 @@ const AuthGuard = ({ children, isLoggedIn = true }) => {
 
   useEffect(() => {
     if (!isLoading && ((!isLoggedIn && user) || (isLoggedIn && !user))) {
-      redirect()
+      redirect();
     }
   }, [user])
   
