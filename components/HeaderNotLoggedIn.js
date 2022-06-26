@@ -10,7 +10,9 @@ function Header() {
       <div className={styles.part1}>
         <ul className={styles.list}>
           <li className={`${styles.listItem} ${styles.logoImage}`}>
-            <Image src={logo} width="60%" height="60%" />
+            <Link href="/">
+              <Image src={logo} width="60%" height="60%" />
+            </Link>
           </li>
           <li className={`${styles.listItem} ${styles.welcomeText}`}>
             Welcome to our Hacker&apos;s Journaling Website!

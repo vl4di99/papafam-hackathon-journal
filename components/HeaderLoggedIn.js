@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from "../styles/components/Header.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../images/logo.png";
 import { UserContext } from "../context/UserContext";
 
@@ -12,7 +13,9 @@ function Header() {
       <div className={styles.part1}>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <Image src={logo} width="60%" height="60%" />
+            <Link href="/">
+              <Image src={logo} width="60%" height="60%" />
+            </Link>
           </li>
           <li className={styles.listItem}>My Journal</li>
           <li className={styles.listItem}>Thoughts of the day✍️</li>
