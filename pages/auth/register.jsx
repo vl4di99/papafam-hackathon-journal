@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Grid, TextField, Typography, CssBaseline, Link, Paper } from '@mui/material';
+import { Button, Grid, TextField, Typography, CssBaseline, Link, Paper, Container } from '@mui/material';
 import { Box } from '@mui/system'
 import { UserContext } from '../../context/UserContext';
 import AuthGuard from '../../components/AuthGuard';
@@ -35,83 +35,85 @@ const Register = () => {
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Typography component="h1" variant="h5">
-              Register
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
-                onChange={(e) => setName(e.target.value)}
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Name"
-                name="name"
-                autoComplete="name"
-                autoFocus
-              />
-              <TextField
-                onChange={(e) => setEmail(e.target.value)}
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                onChange={(e) => setPassword(e.target.value)}
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <TextField
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                margin="normal"
-                required
-                fullWidth
-                name="confirmedPassword"
-                label="Confirmed Password"
-                type="password"
-                id="confirmedPassword"
-                autoComplete="confirm-password"
-              />
-              <Typography color="red">
-                {registerError}
-              </Typography>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
+          <Container maxWidth="sm">
+            <Box
+              sx={{
+                my: 8,
+                mx: 4,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Typography component="h1" variant="h5">
                 Register
-              </Button>
-              <Grid container>
-                <Grid item>
-                  <Link href="/auth/login" variant="body2">
-                    {"Already have an account? Sign In"}
-                  </Link>
+              </Typography>
+              <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                <TextField
+                  onChange={(e) => setName(e.target.value)}
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="name"
+                  label="Name"
+                  name="name"
+                  autoComplete="name"
+                  autoFocus
+                />
+                <TextField
+                  onChange={(e) => setEmail(e.target.value)}
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                />
+                <TextField
+                  onChange={(e) => setPassword(e.target.value)}
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+                <TextField
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="confirmedPassword"
+                  label="Confirmed Password"
+                  type="password"
+                  id="confirmedPassword"
+                  autoComplete="confirm-password"
+                />
+                <Typography color="red">
+                  {registerError}
+                </Typography>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Register
+                </Button>
+                <Grid container>
+                  <Grid item>
+                    <Link href="/auth/login" variant="body2">
+                      {"Already have an account? Sign In"}
+                    </Link>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Box>
             </Box>
-          </Box>
+          </Container>
         </Grid>
       </Grid>
     </AuthGuard>

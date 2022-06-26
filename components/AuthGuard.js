@@ -1,20 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext'
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 const AuthGuard = ({ children, isLoggedIn = true }) => {
-  const { user } = useContext(UserContext);
+  const { user, isLoading } = useContext(UserContext);
+  const Router = useRouter();
 
+  useEffect(() => {
+    if (!isLoading && ((!isLoggedIn && user) || (isLoggedIn && !user))) {
+      redirect()
+    }
+  }, [user])
+  
   const redirect = () => {
     Router.push("/");
   }
 
   return (
-    ((!isLoggedIn && !user) || (isLoggedIn && user)) ? (
-      <div>{children}</div>
-    ) : (
-      <div onClick={redirect()} />
-    )
+    <div>{children}</div>
   )
 }
 
