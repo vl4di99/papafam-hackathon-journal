@@ -10,17 +10,15 @@ export default function Home() {
   return user ? (
     <div className={styles.startPage}>
       <h1 className={styles.textTyped}>
-        {/* <TypeWriter typing={0.5} loop>
-          Hi, {user.displayName}
-        </TypeWriter> */}
+        <TypeWriter typing={0.5}>Hi, {user.displayName}</TypeWriter>
       </h1>
     </div>
   ) : (
     <div className={styles.startPage}>
       <h1 className={styles.textTyped}>
-        {/* <TypeWriter typing={0.5} loop>
+        <TypeWriter typing={0.5} loop>
           {text}
-        </TypeWriter> */}
+        </TypeWriter>
       </h1>
     </div>
   );

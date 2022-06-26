@@ -14,14 +14,26 @@ function Header() {
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <Link href="/">
-              <Image src={logo} width="60%" height="60%" />
+              <Image
+                src={logo}
+                width="60%"
+                height="60%"
+                style={{ cursor: "pointer" }}
+              />
             </Link>
           </li>
-          <li className={styles.listItem}>My Journal</li>
+          <li className={styles.listItem}>
+            <Link href="/journal">My Journal</Link>
+          </li>
           <li className={styles.listItem}>Thoughts of the day✍️</li>
           <li className={styles.listItem}>Productivity tips&tricks</li>
-          <li className={styles.listItem}>Sentimental score</li>
+          <li className={styles.listItem}>
+            <Link href="/score">Sentimental score</Link>
+          </li>
           <li className={styles.listItem}>Hacker&apos;s Time Tracking</li>
+          <li className={styles.listItem}>
+            <Link href="/motivationalQuote">Motivational Quote</Link>
+          </li>
         </ul>
       </div>
       <div className={styles.part2}>

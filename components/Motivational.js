@@ -19,7 +19,7 @@ function Motivational() {
   );
 }
 
-function TakingAction() {
+export function TakingAction() {
   /* needs improvement as the input bars need to be bigger and maybe nicer*/
   return (
     <div className={styles.takingAction}>
@@ -64,7 +64,7 @@ function TakingAction() {
   );
 }
 
-function GoalSetting() {
+export function GoalSetting() {
   return <div className={styles.goalSetting}></div>;
   /*to be continued*/
 }
