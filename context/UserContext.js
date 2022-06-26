@@ -6,14 +6,17 @@ export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState();
-  const [IsLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [loginError, setLoginError] = useState("");
   const [registerError, setRegisterError] = useState("");
   const [recoveryError, setRecoveryError] = useState("");
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => setUser(user))
-    setIsLoading(false);
+    setIsLoading(true);
+    onAuthStateChanged(auth, (user) => {
+      setUser(user)
+      setIsLoading(false);
+    })
   }, [])
   
   const signIn = (email, password) => {
@@ -82,7 +85,8 @@ export const UserContextProvider = ({ children }) => {
         loginError,
         registerError,
         recoverAccount,
-        recoveryError
+        recoveryError,
+        isLoading
       }}
     >
       {children}
